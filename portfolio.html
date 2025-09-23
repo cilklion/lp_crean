@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>制作実績 | Classical Vision Studio</title>
+    <meta name="description" content="Classical Vision Studioの撮影実績をご紹介。オーケストラ、オペラ、室内楽など様々なクラシック音楽の撮影・映像制作を手がけています。">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-category {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .portfolio-description {
+            color: var(--text-medium);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-tag {
+            background: var(--bg-light);
+            color: var(--text-medium);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .portfolio-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .portfolio-stat {
+            text-align: center;
+        }
+
+        .portfolio-stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .portfolio-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--border-light);
+            background: white;
+            color: var(--text-medium);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-weight: 500;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .achievements {
+            background: var(--bg-section);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .achievement-item {
+            background: white;
+            padding: 2rem 1rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .achievement-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-label {
+            color: var(--text-medium);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <span>Classical Vision</span>
+                </a>
+
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="portfolio.html" class="nav-link" style="color: var(--primary-color);">Works</a>
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+                    <a href="process.html" class="nav-link">Process</a>
+                    <a href="estimate.html" class="nav-link">Estimate</a>
+                    <a href="faq.html" class="nav-link">FAQ</a>
+                    <a href="contact.html" class="nav-link nav-link-cta">Contact</a>
+                </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">Works</h1>
+                    <div class="section-line"></div>
+                    <p class="section-subtitle">
+                        クラシック音楽の美しさを映像で表現した作品の数々<br>
+                        様々なジャンルの撮影・映像制作実績をご覧ください
+                    </p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="orchestra">Orchestra</button>
+                    <button class="filter-btn" data-filter="chamber">Chamber Music</button>
+                    <button class="filter-btn" data-filter="opera">Opera</button>
+                    <button class="filter-btn" data-filter="recital">Recital</button>
+                    <button class="filter-btn" data-filter="live">Live Stream</button>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div class="portfolio-grid">
+                    <!-- Portfolio Item 1 -->
+                    <div class="portfolio-item" data-category="orchestra">
+                        <div class="portfolio-image">
+                            <span>オーケストラコンサート</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-category">Orchestra</div>
+                            <h3 class="portfolio-title">東京フィルハーモニー交響楽団 定期演奏会</h3>
+                            <p class="portfolio-description">
+                                サントリーホールでの定期演奏会を8台のカメラで多角度撮影。指揮者とソリストの表情、オーケストラ全体の響きを美しく表現した映像作品。
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">4K撮影</span>
+                                <span class="portfolio-tag">マルチアングル</span>
+                                <span class="portfolio-tag">5.1chサラウンド</span>
+                            </div>
+                            <div class="portfolio-stats">
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">8台</span>
+                                    <span class="portfolio-stat-label">カメラ台数</span>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">120分</span>
+                                    <span class="portfolio-stat-label">収録時間</span>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">98%</span>
+                                    <span class="portfolio-stat-label">クライアント満足度</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 2 -->
+                    <div class="portfolio-item" data-category="opera">
+                        <div class="portfolio-image">
+                            <span>オペラ公演</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-category">Opera</div>
+                            <h3 class="portfolio-title">新国立劇場 ヴェルディ「椿姫」</h3>
+                            <p class="portfolio-description">
+                                新国立劇場での「椿姫」全3幕の舞台撮影。歌手の表情と演技、豪華な舞台装置を余すことなく収録した美しいオペラ映像。
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">舞台撮影</span>
+                                <span class="portfolio-tag">オペラ収録</span>
+                                <span class="portfolio-tag">照明対応</span>
+                            </div>
+                            <div class="portfolio-stats">
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">6台</span>
+                                    <span class="portfolio-stat-label">カメラ台数</span>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">180分</span>
+                                    <span class="portfolio-stat-label">収録時間</span>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">100%</span>
+                                    <span class="portfolio-stat-label">満足度</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 3 -->
+                    <div class="portfolio-item" data-category="chamber">
+                        <div class="portfolio-image">
+                            <span>室内楽コンサート</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-category">Chamber Music</div>
+                            <h3 class="portfolio-title">カザルス・ホール 弦楽四重奏の夕べ</h3>
+                            <p class="portfolio-description">
+                                親密なホールでの弦楽四重奏演奏会。4人の演奏者それぞれの表情と楽器の美しい音色を丁寧に収録した室内楽映像。
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">室内楽</span>
+                                <span class="portfolio-tag">アコースティック</span>
+                                <span class="portfolio-tag">親密な空間</span>
+                            </div>
+                            <div class="portfolio-stats">
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">4台</span>
+                                    <span class="portfolio-stat-label">カメラ台数</span>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">90分</span>
+                                    <span class="portfolio-stat-label">収録時間</span>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">97%</span>
+                                    <span class="portfolio-stat-label">満足度</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 4 -->
+                    <div class="portfolio-item" data-category="healthcare">
+                        <div class="portfolio-image">
+                            <span>クリニックサイト</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-category">医療・ヘルスケア</div>
+                            <h3 class="portfolio-title">美容クリニック様公式サイト</h3>
+                            <p class="portfolio-description">
+                                信頼性と安心感を重視した美容クリニックのウェブサイト。医療機関としての専門性を保ちながら親しみやすいデザインを実現。
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">予約システム</span>
+                                <span class="portfolio-tag">GDPR対応</span>
+                                <span class="portfolio-tag">アクセシビリティ</span>
+                            </div>
+                            <div class="portfolio-stats">
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">180%</span>
+                                    <span class="portfolio-stat-label">予約増加</span>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">5.1分</span>
+                                    <span class="portfolio-stat-label">平均滞在時間</span>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">88%</span>
+                                    <span class="portfolio-stat-label">信頼度向上</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 5 -->
+                    <div class="portfolio-item" data-category="education">
+                        <div class="portfolio-image">
+                            <span>オンライン学習</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-category">教育</div>
+                            <h3 class="portfolio-title">オンライン学習プラットフォーム</h3>
+                            <p class="portfolio-description">
+                                プログラミング学習サービスのLP。学習の楽しさと成長を実感できるデザインで受講生数の大幅増加を実現。
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">LMS連携</span>
+                                <span class="portfolio-tag">動画配信</span>
+                                <span class="portfolio-tag">進捗管理</span>
+                            </div>
+                            <div class="portfolio-stats">
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">280%</span>
+                                    <span class="portfolio-stat-label">受講申込増</span>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">8.7%</span>
+                                    <span class="portfolio-stat-label">CVR改善</span>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">91%</span>
+                                    <span class="portfolio-stat-label">継続率</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 6 -->
+                    <div class="portfolio-item" data-category="corporate">
+                        <div class="portfolio-image">
+                            <span>人材紹介サービス</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-category">コーポレート</div>
+                            <h3 class="portfolio-title">人材紹介サービス様LP</h3>
+                            <p class="portfolio-description">
+                                転職希望者と企業をつなぐ人材紹介サービスのランディングページ。信頼性とプロフェッショナル感を表現したデザイン。
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">会員システム</span>
+                                <span class="portfolio-tag">マッチング機能</span>
+                                <span class="portfolio-tag">セキュリティ強化</span>
+                            </div>
+                            <div class="portfolio-stats">
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">195%</span>
+                                    <span class="portfolio-stat-label">登録者増加</span>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">7.2%</span>
+                                    <span class="portfolio-stat-label">CVR達成</span>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <span class="portfolio-stat-value">89%</span>
+                                    <span class="portfolio-stat-label">満足度</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="achievements">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">実績数値</h2>
+                    <p class="section-subtitle">
+                        数字で見る私たちの成果<br>
+                        クライアント様のビジネス成長をサポートしています
+                    </p>
+                </div>
+
+                <div class="achievement-grid">
+                    <div class="achievement-item">
+                        <span class="achievement-number">150+</span>
+                        <span class="achievement-label">制作実績</span>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="achievement-number">98%</span>
+                        <span class="achievement-label">顧客満足度</span>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="achievement-number">300%</span>
+                        <span class="achievement-label">平均CVR向上</span>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="achievement-number">7年</span>
+                        <span class="achievement-label">平均実績年数</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section" id="cta">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title mb-3">あなたのプロジェクトも成功させませんか？</h2>
+                    <p class="section-subtitle mb-5">
+                        豊富な実績と確かな技術力で<br>
+                        あなたのビジネスの成長をサポートいたします
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="contact.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-comments"></i>
+                            無料相談を申し込む
+                        </a>
+                        <a href="estimate.html" class="btn btn-accent btn-lg">
+                            <i class="fas fa-calculator"></i>
+                            見積りを依頼する
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">LP Design Studio</h3>
+                    <p class="footer-description">
+                        プロフェッショナルなランディングページ制作で<br>
+                        あなたのビジネスを次のレベルへ
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">サービス</h4>
+                    <ul class="footer-links">
+                        <li><a href="portfolio.html">制作実績</a></li>
+                        <li><a href="pricing.html">料金プラン</a></li>
+                        <li><a href="process.html">制作の流れ</a></li>
+                        <li><a href="estimate.html">お見積り</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">サポート</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">よくある質問</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">お問い合わせ</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> info@lpdesign.com</p>
+                        <p><i class="fas fa-phone"></i> 03-1234-5678</p>
+                        <p><i class="fas fa-clock"></i> 平日 9:00-18:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 LP Design Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="static/js/main.js"></script>
+    <script>
+        // Portfolio filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Add hover effects
+            portfolioItems.forEach(item => {
+                item.style.transition = 'all 0.3s ease';
+            });
+        });
+    </script>
+</body>
+</html>

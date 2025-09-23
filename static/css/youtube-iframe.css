@@ -1,0 +1,64 @@
+/* YouTube thumbnail styling for works section */
+.work-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: all var(--transition-normal);
+}
+
+.work-video {
+    position: relative;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--neutral-100);
+    cursor: pointer;
+}
+
+.work-item:hover .work-video img {
+    transform: scale(1.05);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72px;
+    height: 72px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+}
+
+.work-item:hover .play-overlay {
+    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+    transform: translate(-50%, -50%) scale(1.15);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .play-overlay {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .play-overlay {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}

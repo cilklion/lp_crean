@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}LP Design Studio - プロフェッショナルなランディングページ制作{% endblock %}</title>
+    <meta name="description" content="{% block description %}プロが作るモダンなランディングページ制作サービス。高品質なデザインと確実な成果でビジネスを加速させます。{% endblock %}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <span>LP Design</span>
+                </a>
+
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">ホーム</a>
+                    <a href="portfolio.html" class="nav-link">制作実績</a>
+                    <a href="pricing.html" class="nav-link">料金</a>
+                    <a href="process.html" class="nav-link">納品の流れ</a>
+                    <a href="estimate.html" class="nav-link">お見積り</a>
+                    <a href="faq.html" class="nav-link">よくある質問</a>
+                    <a href="contact.html" class="nav-link nav-link-cta">お問い合わせ</a>
+                </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">LP Design Studio</h3>
+                    <p class="footer-description">
+                        プロフェッショナルなランディングページ制作で<br>
+                        あなたのビジネスを次のレベルへ
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">サービス</h4>
+                    <ul class="footer-links">
+                        <li><a href="portfolio.html">制作実績</a></li>
+                        <li><a href="pricing.html">料金プラン</a></li>
+                        <li><a href="process.html">制作の流れ</a></li>
+                        <li><a href="estimate.html">お見積り</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">サポート</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">よくある質問</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">お問い合わせ</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> info@lpdesign.com</p>
+                        <p><i class="fas fa-phone"></i> 03-1234-5678</p>
+                        <p><i class="fas fa-clock"></i> 平日 9:00-18:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 LP Design Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../static/js/main.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
