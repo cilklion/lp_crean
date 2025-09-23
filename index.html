@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="static/css/service-highlights.css">
     <link rel="stylesheet" href="static/css/service-benefits-simple.css">
     <link rel="stylesheet" href="static/css/youtube-iframe.css">
+    <link rel="stylesheet" href="static/css/mobile-first-layout.css">
+    <link rel="stylesheet" href="static/css/mobile-layout-fixes.css">
+    <link rel="stylesheet" href="static/css/updated-sections.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -24,6 +27,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Left Sidebar -->
+    <div class="sidebar-left">
+        <div class="sidebar-content">
+            <div class="decorative-element">
+                <i class="fas fa-music"></i>
+            </div>
+            <div class="brand-logo">Classical<br>Vision</div>
+            <div class="brand-tagline">
+                音楽を世界に<br>
+                届ける<br>
+                映像制作
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="sidebar-right">
+        <div class="sidebar-content">
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <a href="#contact" class="contact-cta">
+                お問い合わせ
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
     <!-- Header -->
     <header class="header">
         <nav class="nav">
@@ -34,8 +77,8 @@
 
                 <div class="nav-menu" id="nav-menu">
                     <a href="#about" class="nav-link">About</a>
+                    <a href="#estimate" class="nav-link">Plan</a>
                     <a href="#works" class="nav-link">Works</a>
-                    <a href="#estimate" class="nav-link">Estimate</a>
                     <a href="#faq" class="nav-link">FAQ</a>
                     <a href="#contact" class="nav-link nav-link-cta">Contact</a>
                 </div>
@@ -51,44 +94,155 @@
 
     <!-- Main Content -->
     <main class="main">
-        <!-- Hero Section -->
-        <section class="hero hero-gradient">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title fade-in">音楽を世界に届ける</h1>
-                    <p class="hero-subtitle fade-in-delay-1">
-                        クラシック音楽専門のプロフェッショナル映像制作<br>
-                        あなたの芸術を最高の品質で永遠に残す
-                    </p>
+
+        <!-- About Us Section -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="main-title"><span class="service-text">演奏動画サービス</span><br>Classical Vision</h1>
                 </div>
-                <div class="hero-buttons fade-in-delay-2">
-                    <a href="#works" class="btn btn-primary btn-lg">
-                        制作実績を見る
-                    </a>
-                    <a href="#estimate" class="btn btn-secondary btn-lg">
-                        お見積り依頼
-                    </a>
+
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>プロフェッショナルな<br>演奏動画制作サービス</p>
+                        <p>たった１日で完結する<br>効率的な撮影プロセス</p>
+                        <p>シネマティックな映像美で<br>あなたの演奏を記録</p>
+                        <p>音楽への深い理解と<br>最新の撮影技術で<br>最高品質の作品を<br>お届けします</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- About & Services Section -->
-        <section class="section" id="about">
+        <!-- Pricing Section -->
+        <section class="section section-gradient" id="estimate">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Services</h2>
+                    <h2 class="section-title">Plan</h2>
                     <div class="section-line"></div>
-                    <p class="section-description">Classical Vision は、演奏動画制作サービスです。<br>あなたの芸術を最高の形で記録します</p>
+                    <div class="pricing-intro">
+                        <p class="pricing-text">ご予算に合わせた</p>
+                        <p class="pricing-text">３つのプランをご用意しました</p>
+                    </div>
                 </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <div class="service-benefits-simple">
-                            <p><i class="fas fa-clock"></i> 撮影はたった<strong>1日</strong>で完結</p>
-                            <p><i class="fas fa-video"></i> <strong>シネマティック</strong>な映像美</p>
+
+                <div class="pricing-plans">
+                    <div class="pricing-plan glass-card">
+                        <div class="plan-header">
+                            <h3 class="plan-name">シンプルプラン</h3>
+                            <div class="plan-price">
+                                <div class="enhanced-price">
+                                    <span class="price-number">7</span>
+                                    <span class="price-unit">万円</span>
+                                </div>
+                                <span class="price-note">（税別）</span>
+                            </div>
+                            <p class="plan-description">初めての演奏動画におすすめ</p>
+                        </div>
+                        <div class="plan-details">
+                            <ul class="plan-features">
+                                <li><i class="fas fa-music"></i>楽器1台</li>
+                                <li><i class="fas fa-play"></i>曲数1曲</li>
+                                <li><i class="fas fa-clock"></i>演奏時間3分半</li>
+                                <li><i class="fas fa-video"></i>1日撮影</li>
+                                <li><i class="fas fa-edit"></i>編集・データ納品</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="about-image">
-                        <img src="static/images/cello-performance.jpg" alt="チェロ演奏風景" loading="lazy">
+
+                    <div class="pricing-plan glass-card featured">
+                        <div class="plan-badge">人気</div>
+                        <div class="plan-header">
+                            <h3 class="plan-name">スタンダードプラン</h3>
+                            <div class="plan-price">
+                                <div class="enhanced-price">
+                                    <span class="price-number">10</span>
+                                    <span class="price-unit">万円</span>
+                                </div>
+                                <span class="price-note">（税別）</span>
+                            </div>
+                            <p class="plan-description">最も人気のバランス型</p>
+                        </div>
+                        <div class="plan-details">
+                            <ul class="plan-features">
+                                <li><i class="fas fa-music"></i>楽器2～3台</li>
+                                <li><i class="fas fa-play"></i>曲数1～2曲</li>
+                                <li><i class="fas fa-clock"></i>演奏時間3分半</li>
+                                <li><i class="fas fa-video"></i>1日撮影</li>
+                                <li><i class="fas fa-edit"></i>編集・データ納品</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="pricing-plan glass-card">
+                        <div class="plan-header">
+                            <h3 class="plan-name">プレミアムプラン</h3>
+                            <div class="plan-price">
+                                <div class="enhanced-price">
+                                    <span class="price-number">15</span>
+                                    <span class="price-unit">万円</span>
+                                </div>
+                                <span class="price-note">（税別）</span>
+                            </div>
+                            <p class="plan-description">本格的なアンサンブル向け</p>
+                        </div>
+                        <div class="plan-details">
+                            <ul class="plan-features">
+                                <li><i class="fas fa-music"></i>楽器4台以上</li>
+                                <li><i class="fas fa-play"></i>曲数1～3曲</li>
+                                <li><i class="fas fa-clock"></i>演奏時間5分</li>
+                                <li><i class="fas fa-video"></i>1日撮影</li>
+                                <li><i class="fas fa-edit"></i>編集・データ納品</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="additional-options">
+                    <h3 class="options-title">オプション</h3>
+                    <div class="options-grid">
+                        <div class="option-item">
+                            <div class="option-icon"><i class="fas fa-plus"></i></div>
+                            <div class="option-content">
+                                <h4>複数楽曲の撮影</h4>
+                                <p class="option-price">追加曲数1曲ごとに35,000円</p>
+                            </div>
+                        </div>
+                        <div class="option-item">
+                            <div class="option-icon"><i class="fas fa-expand"></i></div>
+                            <div class="option-content">
+                                <h4>長編作品の制作</h4>
+                                <p class="option-price">30秒延長ごとに10,000円</p>
+                            </div>
+                        </div>
+                        <div class="option-item">
+                            <div class="option-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="option-content">
+                                <h4>全国対応撮影</h4>
+                                <p class="option-price">関東圃内以外は交通費実費</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-notes">
+                    <div class="notes-content">
+                        <h4><i class="fas fa-info-circle"></i> お客様にご用意いただくもの</h4>
+                        <ul>
+                            <li>撮影会場（スタジオ・ホール・リハーサルルーム等）</li>
+                            <li>楽曲音源（WAVまたはMP3ファイル）</li>
+                            <li>関東圃内以外での撮影の場合の交通費</li>
+                            <li>駐車料金（会場により必要）</li>
+                        </ul>
+                        <p class="payment-info"><strong>お支払い：</strong>安心の前払い制（撮影日1週間前）で確実なサービスをお約束</p>
+                    </div>
+                </div>
+
+                <!-- CTA after pricing -->
+                <div class="cta-section">
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary btn-lg">
+                            お問い合わせ・ご相談
+                        </a>
                     </div>
                 </div>
             </div>
@@ -100,7 +254,6 @@
                 <div class="section-header">
                     <h2 class="section-title">Works</h2>
                     <div class="section-line"></div>
-                    <p class="section-description">これまでに手がけた映像制作の一部をご紹介いたします</p>
                 </div>
 
                 <div class="works-grid">
@@ -138,120 +291,6 @@
                         <div class="work-info">
                             <h4>The Water Is Wide＿ HirotaMondenDuo</h4>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing Section -->
-        <section class="section section-gradient" id="estimate">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Plan</h2>
-                    <div class="section-line"></div>
-                    <p class="section-description">あなたのスタイルと予算に合わせたプランをご用意しました</p>
-                </div>
-
-                <div class="pricing-plans">
-                    <div class="pricing-plan glass-card">
-                        <div class="plan-header">
-                            <h3 class="plan-name">シンプルプラン</h3>
-                            <div class="plan-price">
-                                <span class="price-amount">7万円</span>
-                                <span class="price-note">（税別）</span>
-                            </div>
-                            <p class="plan-description">初めての演奏動画におすすめ</p>
-                        </div>
-                        <div class="plan-details">
-                            <ul class="plan-features">
-                                <li><i class="fas fa-music"></i>楽器1台</li>
-                                <li><i class="fas fa-play"></i>曲数1曲</li>
-                                <li><i class="fas fa-clock"></i>演奏時間3分半</li>
-                                <li><i class="fas fa-video"></i>1日撮影</li>
-                                <li><i class="fas fa-edit"></i>編集・データ納品</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="pricing-plan glass-card featured">
-                        <div class="plan-badge">人気</div>
-                        <div class="plan-header">
-                            <h3 class="plan-name">スタンダードプラン</h3>
-                            <div class="plan-price">
-                                <span class="price-amount">10万円</span>
-                                <span class="price-note">（税別）</span>
-                            </div>
-                            <p class="plan-description">最も人気のバランス型</p>
-                        </div>
-                        <div class="plan-details">
-                            <ul class="plan-features">
-                                <li><i class="fas fa-music"></i>楽器2～3台</li>
-                                <li><i class="fas fa-play"></i>曲数1～2曲</li>
-                                <li><i class="fas fa-clock"></i>演奏時間3分半</li>
-                                <li><i class="fas fa-video"></i>1日撮影</li>
-                                <li><i class="fas fa-edit"></i>編集・データ納品</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="pricing-plan glass-card">
-                        <div class="plan-header">
-                            <h3 class="plan-name">プレミアムプラン</h3>
-                            <div class="plan-price">
-                                <span class="price-amount">15万円</span>
-                                <span class="price-note">（税別）</span>
-                            </div>
-                            <p class="plan-description">本格的なアンサンブル向け</p>
-                        </div>
-                        <div class="plan-details">
-                            <ul class="plan-features">
-                                <li><i class="fas fa-music"></i>楽器4～5台</li>
-                                <li><i class="fas fa-play"></i>曲数2～3曲</li>
-                                <li><i class="fas fa-clock"></i>演奏時間3分半</li>
-                                <li><i class="fas fa-video"></i>1日撮影</li>
-                                <li><i class="fas fa-edit"></i>編集・データ納品</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="additional-options">
-                    <h3 class="options-title">さらに充実させたい方へ</h3>
-                    <div class="options-grid">
-                        <div class="option-item">
-                            <div class="option-icon"><i class="fas fa-plus"></i></div>
-                            <div class="option-content">
-                                <h4>複数楽曲の撮影</h4>
-                                <p class="option-price">追加曲数1曲ごとに35,000円</p>
-                            </div>
-                        </div>
-                        <div class="option-item">
-                            <div class="option-icon"><i class="fas fa-expand"></i></div>
-                            <div class="option-content">
-                                <h4>長編作品の制作</h4>
-                                <p class="option-price">30秒延長ごとに10,000円</p>
-                            </div>
-                        </div>
-                        <div class="option-item">
-                            <div class="option-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="option-content">
-                                <h4>全国対応撮影</h4>
-                                <p class="option-price">関東圃内以外は交通費実費</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pricing-notes">
-                    <div class="notes-content">
-                        <h4><i class="fas fa-info-circle"></i> お客様にご用意いただくもの</h4>
-                        <ul>
-                            <li>撮影会場（スタジオ・ホール・リハーサルルーム等）</li>
-                            <li>楽曲音源（WAVまたはMP3ファイル）</li>
-                            <li>関東圃内以外での撮影の場合の交通費</li>
-                            <li>駐車料金（会場により必要）</li>
-                        </ul>
-                        <p class="payment-info"><strong>お支払い：</strong>安心の前払い制（撮影日1週間前）で確実なサービスをお約束</p>
                     </div>
                 </div>
             </div>
@@ -344,38 +383,6 @@
                 </div>
 
                 <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>お問い合わせ先</h3>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>メール</strong>
-                                <p>info@classicalvision.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <strong>電話</strong>
-                                <p>03-1234-5678</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <strong>営業時間</strong>
-                                <p>平日 9:00-18:00</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>所在地</strong>
-                                <p>東京都渋谷区（詳細住所はお問い合わせ時にお伝えします）</p>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="contact-form">
                         <form class="form">
                             <div class="form-row">
@@ -431,59 +438,14 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-title">Classical Vision Studio</h3>
-                    <p class="footer-description">
-                        クラシック音楽の美しさを映像で表現する<br>
-                        プロフェッショナルな映像制作スタジオ
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer-social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">サービス</h4>
-                    <ul class="footer-links">
-                        <li><a href="#works">制作実績</a></li>
-                        <li><a href="#services">撮影サービス</a></li>
-                        <li><a href="#estimate">お見積り</a></li>
-                        <li><a href="#faq">Q&A</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">撮影分野</h4>
-                    <ul class="footer-links">
-                        <li><a href="#services">コンサート撮影</a></li>
-                        <li><a href="#services">オペラ・舞台撮影</a></li>
-                        <li><a href="#services">ライブ配信</a></li>
-                        <li><a href="#services">プロモーション映像</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">お問い合わせ</h4>
-                    <div class="footer-contact">
-                        <p><i class="fas fa-envelope"></i> info@classicalvision.com</p>
-                        <p><i class="fas fa-phone"></i> 03-1234-5678</p>
-                        <p><i class="fas fa-clock"></i> 平日 9:00-18:00</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 Classical Vision Studio. All rights reserved.</p>
-            </div>
+        <div class="container">
+            <p class="copyright">© 2025 Classical Vision</p>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="static/js/main.js"></script>
     <script src="static/js/refined-interactions.js"></script>
+    </div> <!-- End Main Container -->
 </body>
 </html>

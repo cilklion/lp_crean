@@ -1,0 +1,83 @@
+/* Updated Sections Styling */
+
+/* Service intro section */
+.service-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.intro-text {
+    font-size: var(--text-xl);
+    color: var(--neutral-700);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.intro-text:last-child {
+    margin-bottom: 0;
+}
+
+/* Feature bands with rounded corners */
+.feature-bands {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.feature-band {
+    background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-800) 100%);
+    color: white;
+    padding: 1.25rem 2rem;
+    border-radius: 25px;
+    text-align: center;
+    font-size: var(--text-lg);
+    font-weight: 500;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-normal);
+}
+
+.feature-band:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Enhanced pricing styles */
+.enhanced-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.price-number {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: white;
+}
+
+.price-unit {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .intro-text {
+        font-size: var(--text-lg);
+    }
+
+    .feature-band {
+        padding: 1rem 1.5rem;
+        font-size: var(--text-base);
+    }
+
+    .price-number {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .price-unit {
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
+    }
+}

@@ -1,0 +1,481 @@
+/* Mobile Layout Fixes */
+
+/* Mobile-first design applied to all screen sizes */
+.main-container {
+    font-size: 16px; /* Base font size */
+}
+
+/* Hero section adjustments */
+.main-container .hero-title {
+    font-size: clamp(2rem, 6vw, 2.5rem) !important;
+    line-height: 1.2;
+    white-space: normal;
+}
+
+/* Service text smaller size (inline with Classical Vision) */
+.main-container .hero-title .service-text {
+    font-size: clamp(0.8rem, 2.5vw, 1rem) !important;
+    display: inline;
+}
+
+/* Main title styling (now part of about-content background) */
+.main-container .main-title {
+    font-size: clamp(2rem, 6vw, 2.5rem) !important;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: black;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    padding: 0;
+}
+
+.main-container .main-title * {
+    position: relative;
+    z-index: 1;
+}
+
+.main-container .main-title .service-text {
+    font-size: clamp(0.8rem, 2.5vw, 1rem) !important;
+    display: inline;
+}
+
+/* Hero buttons styling */
+.main-container .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+/* CTA section after pricing */
+.main-container .cta-section {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem 0;
+}
+
+
+/* Additional spacing between button and Works title */
+.main-container .section-title {
+    margin-top: 30px;
+}
+
+.main-container .hero-subtitle {
+    font-size: 1rem !important;
+    line-height: 1.5;
+}
+
+    /* Section title adjustments */
+    .main-container .section-title {
+        font-size: clamp(1.5rem, 4vw, 2rem) !important;
+    }
+
+    /* Navigation adjustments */
+    .main-container .nav-link {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    /* Button adjustments */
+    .main-container .btn {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .main-container .btn-lg {
+        font-size: 1rem;
+        padding: 1rem 2rem;
+    }
+
+    /* Fix hero button visibility */
+    .main-container .btn-primary {
+        background: linear-gradient(135deg, var(--accent-700) 0%, var(--accent-600) 100%) !important;
+        color: white !important;
+        border: 2px solid var(--accent-600) !important;
+        box-shadow: 0 4px 15px rgba(139, 105, 20, 0.3) !important;
+    }
+
+    .main-container .btn-primary:hover {
+        background: linear-gradient(135deg, var(--accent-800) 0%, var(--accent-700) 100%) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba(139, 105, 20, 0.4) !important;
+    }
+
+    .main-container .btn-secondary {
+        background: rgba(255, 255, 255, 0.9) !important;
+        color: var(--accent-700) !important;
+        border: 2px solid var(--accent-600) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+
+    .main-container .btn-secondary:hover {
+        background: var(--accent-600) !important;
+        color: white !important;
+        transform: translateY(-2px) !important;
+    }
+
+    /* Pricing plan adjustments */
+    .main-container .plan-name {
+        font-size: 1.25rem !important;
+    }
+
+    .main-container .price-amount {
+        font-size: 2rem !important;
+    }
+
+    /* Service benefits adjustments */
+    .main-container .service-benefits-simple p {
+        font-size: 1rem !important;
+    }
+
+    /* FAQ adjustments */
+    .main-container .faq-header h4 {
+        font-size: 1.1rem !important;
+    }
+
+    /* Container padding fixes */
+    .main-container .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* About section layout adjustment after image removal */
+    .main-container .about-content {
+        display: block !important;
+        text-align: center;
+    }
+
+    .main-container .about-text {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Section spacing fixes */
+    .main-container .section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    /* Hero specific spacing */
+    .main-container .hero {
+        padding-top: 120px;
+        padding-bottom: 0.5rem;
+    }
+
+    /* About section is now visible */
+
+    .main-container .section#works {
+        padding-top: 1rem;
+    }
+
+    /* Remove excessive margins */
+    .main-container .hero-content {
+        margin: 0;
+    }
+
+    .main-container .hero-text {
+        margin-bottom: 2rem;
+    }
+
+    .main-container .hero-buttons {
+        margin-bottom: 0;
+    }
+}
+
+/* Ensure proper spacing between sections */
+.main-container .section + .section {
+    border-top: 1px solid rgba(229, 229, 229, 0.3);
+}
+
+/* Remove default section margins that cause gaps */
+.main-container .section {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+    /* Pricing section specific */
+    .main-container .pricing-plans {
+        gap: 1rem;
+    }
+
+    .main-container .pricing-plan {
+        margin-bottom: 0;
+    }
+
+    /* Works section */
+    .main-container .works-grid {
+        gap: 1rem;
+    }
+
+    /* Pricing section width fixes */
+    .main-container .pricing-plans {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main-container .additional-options {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main-container .pricing-notes {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Contact section width fixes */
+    .main-container .contact-content {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .main-container .contact-form {
+        padding: 2rem 1rem;
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-container .contact-form .form {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    /* Better centering for contact info and form */
+    .main-container .contact-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .main-container .contact-info {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    /* Fix section-gradient background width to match other sections */
+    .main-container .section-gradient {
+        background: none;
+        position: relative;
+    }
+
+    .main-container .section-gradient::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: var(--spacing-lg);
+        right: var(--spacing-lg);
+        bottom: 0;
+        background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 50%, #fafafa 100%);
+        border-radius: 0;
+        z-index: -1;
+    }
+
+    .main-container .section-gradient .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .main-container .form-row {
+        display: block !important;
+        gap: 0;
+    }
+
+    .main-container .form-group {
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .main-container .form-group input,
+    .main-container .form-group select,
+    .main-container .form-group textarea {
+        font-size: 1rem;
+        padding: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 8px;
+        border: 2px solid var(--neutral-200);
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .main-container .form-group label {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        color: var(--neutral-600);
+        font-weight: 500;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 0 0.5rem;
+        z-index: 10;
+        transition: all 0.2s ease;
+        pointer-events: none;
+    }
+
+    .main-container .form-group.focused label,
+    .main-container .form-group input:focus + label,
+    .main-container .form-group select:focus + label,
+    .main-container .form-group textarea:focus + label {
+        transform: translateY(-130%) scale(0.85);
+        color: var(--accent-600);
+        font-weight: 600;
+    }
+}
+
+/* Mobile version fixes (when sidebars are hidden) */
+@media (max-width: 1200px) {
+    /* Reduce hero section padding on mobile */
+    .hero {
+        padding-top: 100px !important;
+        padding-bottom: 1rem !important;
+    }
+
+    /* Reduce works section padding on mobile */
+    .section#works {
+        padding-top: 1.5rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* General section spacing for mobile */
+    .section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Hero specific mobile adjustments */
+    .hero-content {
+        margin: 0 !important;
+    }
+
+    .hero-text {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .hero-buttons {
+        margin-bottom: 0 !important;
+    }
+
+    /* Mobile title sizing optimization */
+    .main-title {
+        font-size: clamp(1.5rem, 5vw, 2rem) !important;
+        margin-bottom: 1.5rem !important;
+        padding: 2rem 1.5rem !important;
+    }
+
+    .main-title .service-text {
+        font-size: clamp(0.7rem, 2vw, 0.9rem) !important;
+    }
+
+    .section-title {
+        font-size: clamp(1.25rem, 4vw, 1.75rem) !important;
+        margin-top: 20px !important;
+    }
+
+    /* CTA section mobile adjustments */
+    .cta-section {
+        margin-top: 2rem !important;
+        padding: 1.5rem 0 !important;
+    }
+
+    /* About content mobile adjustments */
+    .about-content {
+        padding: 2rem 1.5rem !important;
+    }
+}
+
+/* Footer styling */
+.main-container .footer {
+    text-align: center;
+    padding: 2rem 0 1rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(229, 229, 229, 0.3);
+}
+
+.main-container .footer .copyright {
+    font-size: 0.875rem;
+    color: var(--neutral-500);
+    margin: 0;
+    font-weight: 400;
+}
+
+/* About Us section styling with background image - All screen sizes */
+.main-container .about-content {
+    text-align: center;
+    margin-top: 0;
+    position: relative;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.main-container .about-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../titleback.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.6) saturate(0.7);
+    z-index: -1;
+}
+
+.main-container .about-text {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.main-container .about-text p {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    line-height: 1.8;
+    color: white;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.main-container .about-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Contact form submit button styling */
+.main-container .form-group:last-child {
+    text-align: center;
+}
+
+.main-container .btn-block {
+    width: auto;
+    display: inline-block;
+    padding: 1rem 3rem;
+}
+
+/* Left and right margins black background */
+body {
+    background-color: black;
+}
+
+.main-container {
+    background-color: white;
+    box-shadow: 0 0 0 100vw black;
+}
